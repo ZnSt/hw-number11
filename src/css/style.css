@@ -1,6 +1,12 @@
+body {
+  background-color: #f1f1f1;
+  font-family: sans-serif;
+}
 .search-form {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 input {
@@ -13,11 +19,13 @@ input {
   color: inherit;
   outline: none;
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 ::placeholder {
   color: black;
   font-size: 1.5em;
+  height: 100%;
 }
 
 button {
@@ -26,6 +34,15 @@ button {
   cursor: pointer;
   border-radius: 5px;
   font-size: 1em;
+  padding: 10px;
+  width: 115px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: black;
+  color: #f1f1f1;
+  transition: all 500ms ease;
 }
 
 .load-more {
@@ -39,13 +56,28 @@ button {
   border-radius: 5px;
 }
 
+.info {
+  background-color: black;
+  border-radius: 8px;
+}
+
+.info-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  color: #f1f1f1;
+}
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 img {
-  width: 350px;
+  width: 250px;
+  height: 200px;
+  object-position: center;
+  border-radius: 10px;
 }
 
 .load-more.is-hidden {

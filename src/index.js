@@ -29,7 +29,7 @@ async function mountData(searchValue) {
     const markup = createCardGallery(data.hits);
 
     updateMarkup(divContainer, markup);
-
+    lightBox.refresh();
     loadMoreBtn.classList.remove('is-hidden');
     loadMoreBtn.removeEventListener('click', listenerCallback);
     loadMoreBtn.addEventListener('click', listenerCallback);
@@ -60,6 +60,7 @@ form.addEventListener('submit', onSubmitForm);
 function onSubmitForm(event) {
   event.preventDefault();
   searchValue = event.currentTarget.elements.searchQuery.value.trim();
+
   if (!searchValue) {
     Notiflix.Notify.info('Please enter a valid name!');
   }

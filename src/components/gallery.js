@@ -12,7 +12,7 @@ export function createCardGallery(cardArr) {
       }) => {
         return `
          <div class="photo-card">
-         <a href="${largeImageURL}" class="link-photo"><img src="${webformatURL}" alt="${largeImageURL}" loading="lazy"/>
+         <a href="${largeImageURL}" class="link-photo"><img src="${webformatURL}" alt="${tags}" loading="lazy"/> </a>
         <div class="info">
         <p class="info-item">
           <b>Likes: <span>${likes}</span></b>
@@ -27,7 +27,7 @@ export function createCardGallery(cardArr) {
           <b>Downloads: <span>${downloads}</span></b>
         </p>
       </div>
-      </a>
+
     </div>
         `;
       }
