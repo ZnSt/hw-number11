@@ -1,15 +1,18 @@
-export function createCardMarkup({
-  webformatURL,
-  largeImageURL,
-  tags,
-  likes,
-  views,
-  comments,
-  downloads,
-}) {
-  return `
+export function createCardGallery(cardArr) {
+  return cardArr
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => {
+        return `
          <div class="photo-card">
-         <a href="" class="link-photo"><img src="${webformatURL}" alt="${tags}" loading="lazy"/></a>
+         <a href="${largeImageURL}" class="link-photo"><img src="${webformatURL}" alt="${largeImageURL}" loading="lazy"/>
         <div class="info">
         <p class="info-item">
           <b>Likes: <span>${likes}</span></b>
@@ -24,6 +27,10 @@ export function createCardMarkup({
           <b>Downloads: <span>${downloads}</span></b>
         </p>
       </div>
+      </a>
     </div>
         `;
+      }
+    )
+    .join('');
 }
